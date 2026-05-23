@@ -27,7 +27,7 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 
-        pkg, err := scanner.ScanNPM(args[0])
+        pkg, err := scanner.ParsePackageJSON(args[0])
 		
         if verbose {
 			fmt.Println("verbose output enabled")
@@ -41,7 +41,7 @@ to quickly create a Cobra application.`,
 
 			fmt.Println("\nDependencies")
 
-			for name, version := range pkg.Dependencies {
+			for name, version := range pkg.Name {
 				fmt.Println(name, "=>", version)
 			}
             return 
@@ -63,7 +63,7 @@ to quickly create a Cobra application.`,
 		}
 
 
-		if _, err := scanner.ScanNPM(packageFile); err != nil {
+		if _, err := scanner.ParsePackageJSON(packageFile); err != nil {
 			fmt.Println(err)
 			return
 		}
