@@ -14,7 +14,7 @@ type PackageJSON struct {
 	DevDependencies map[string]string `json:"devDependencies,omitempty"`
 }
 
-func ScanNPM(path string) (*PackageJSON , error) {
+func ScanNPM(path string) (*PackageJSON, error) {
 	if path == "" {
 		path = "package.json"
 	}
@@ -40,5 +40,3 @@ func ScanNPM(path string) (*PackageJSON , error) {
 
 	return &pkg, nil
 }
-
-

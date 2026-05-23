@@ -6,5 +6,5 @@ package main
 import "github.com/bhavneet-singh/guardian/cmd"
 
 func main() {
-	cmd.Execute()
+    cmd.Execute()
 }
