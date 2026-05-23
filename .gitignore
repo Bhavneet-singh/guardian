@@ -1,0 +1,13 @@
+.gocache/
+gocache/
+guardian/.gocache/
+bin/
+build/
+dist/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.out
